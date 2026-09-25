@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hora Santa — 2 de outubro de 2026</title>
+<meta name="description" content="Um anjo veio confortá-lo">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>:root {
+  --papel: #fbf7f0; --tinta: #2a211c; --suave: #6b5d52; --linha: #e4d8c6;
+  --rubi: #8f1d21; --ouro: #a97b2c; --caixa: #f4ecdf; --barra: #fffdf9;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --papel: #1b1614; --tinta: #efe6da; --suave: #b9aa9a; --linha: #3a302a;
+    --rubi: #e0676b; --ouro: #d7a854; --caixa: #262019; --barra: #221c19;
+  }
+}
+:root[data-theme="dark"] {
+  --papel: #1b1614; --tinta: #efe6da; --suave: #b9aa9a; --linha: #3a302a;
+  --rubi: #e0676b; --ouro: #d7a854; --caixa: #262019; --barra: #221c19;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--papel); color: var(--tinta);
+  font: 17px/1.6 "Source Serif 4", Georgia, "Palatino Linotype", serif;
+}
+main { max-width: 680px; margin: 0 auto; padding: 0 16px 48px; }
+.barra {
+  position: sticky; top: 0; z-index: 5; display: flex; gap: 6px; flex-wrap: wrap;
+  justify-content: center; padding: 8px 12px; background: var(--barra);
+  border-bottom: 1px solid var(--linha);
+}
+.barra a {
+  font: 600 14px/1 "Source Serif 4", Georgia, serif; color: var(--rubi);
+  text-decoration: none; padding: 8px 12px; border: 1px solid var(--linha); border-radius: 999px;
+}
+.barra a:hover { background: var(--caixa); }
+
+/* capa */
+.capa { text-align: center; padding: 36px 0 28px; border-bottom: 2px solid var(--ouro); margin-bottom: 18px; }
+.capa.curta { border: 0; }
+.emblema { width: 84px; height: 91px; color: var(--rubi); display: block; margin: 10px auto 4px; }
+.capa h1 {
+  font: 700 44px/1.05 "Cormorant Garamond", Georgia, serif; color: var(--rubi);
+  margin: 6px 0 4px; letter-spacing: .02em;
+}
+.sobre { text-transform: uppercase; letter-spacing: .18em; font-size: 12px; color: var(--ouro); margin: 0; }
+.data { font-size: 19px; font-weight: 600; margin: 4px 0 14px; }
+.tema { font: italic 500 25px/1.25 "Cormorant Garamond", Georgia, serif; margin: 0 0 4px; }
+.versiculo { color: var(--suave); font-size: 15px; margin: 0 0 16px; }
+.programa {
+  list-style: none; padding: 12px 16px; margin: 0 auto 14px; max-width: 380px; text-align: left;
+  background: var(--caixa); border-radius: 10px; font-size: 15px;
+}
+.programa li { padding: 3px 0; }
+.programa b { color: var(--rubi); display: inline-block; min-width: 52px; }
+.paroquia { font-size: 14px; color: var(--suave); margin: 0; }
+
+/* corpo */
+h2 {
+  font: 700 27px/1.2 "Cormorant Garamond", Georgia, serif; color: var(--rubi);
+  margin: 34px 0 10px; padding-bottom: 4px; border-bottom: 1px solid var(--linha);
+}
+h3 { font: 700 21px/1.25 "Cormorant Garamond", Georgia, serif; margin: 22px 0 6px; color: var(--tinta); }
+.hora {
+  display: inline-block; font: 600 14px/1 "Source Serif 4", Georgia, serif; color: #fff;
+  background: var(--rubi); padding: 5px 9px; border-radius: 6px; vertical-align: 4px; margin-right: 4px;
+}
+p { margin: 0 0 10px; }
+.rubrica p { color: var(--rubi); font-style: italic; font-size: 15px; margin: 4px 0 8px; }
+.fala { padding-left: 30px; text-indent: -30px; }
+.fala p { margin: 0 0 8px; }
+.quem { color: var(--rubi); font-weight: 600; display: inline-block; width: 26px; text-indent: 0; }
+.todos p { font-weight: 600; }
+.oracao, .nota {
+  background: var(--caixa); border-left: 4px solid var(--ouro); border-radius: 0 10px 10px 0;
+  padding: 12px 16px; margin: 12px 0 16px;
+}
+.nota, .oracao.curta { break-inside: avoid; }
+.check ul { list-style: none; padding-left: 2px; }
+.oracao .tit, .nota .tit {
+  font: 700 19px/1.2 "Cormorant Garamond", Georgia, serif; color: var(--rubi); margin-bottom: 6px;
+}
+.nota { border-left-color: var(--rubi); font-size: 15.5px; }
+.oracao p:last-child, .nota p:last-child { margin-bottom: 0; }
+ul, ol { padding-left: 22px; margin: 0 0 12px; }
+li { margin: 2px 0; }
+table { width: 100%; border-collapse: collapse; font-size: 15px; margin: 8px 0 16px; }
+th, td { border: 1px solid var(--linha); padding: 6px 8px; text-align: left; vertical-align: top; }
+th { background: var(--caixa); }
+.tabela { overflow-x: auto; }
+hr { border: 0; border-top: 1px solid var(--linha); margin: 24px 0; }
+a { color: var(--rubi); }
+.rodape { margin-top: 36px; padding-top: 10px; border-top: 1px solid var(--linha); font-size: 13px; color: var(--suave); text-align: center; }
+
+/* índice */
+.arquivo { list-style: none; padding: 0; }
+.arquivo li { border: 1px solid var(--linha); border-radius: 10px; padding: 12px 14px; margin: 10px 0; background: var(--caixa); }
+.arquivo li > a { text-decoration: none; color: var(--tinta); display: block; }
+.arquivo span { display: block; font-style: italic; color: var(--suave); }
+.arquivo small { font-size: 14px; }
+
+@media (max-width: 480px) {
+  body { font-size: 16.5px; }
+  .capa h1 { font-size: 38px; }
+  table { font-size: 14px; }
+}
+
+/* impressão: A5, pronto para dobrar ou enviar */
+@page { size: A5; margin: 13mm 12mm 14mm; }
+@media print {
+  :root { --papel: #fff; --tinta: #1d1714; --suave: #5c5047; --linha: #d9ccb8;
+          --rubi: #8f1d21; --ouro: #a97b2c; --caixa: #f6efe4; }
+  body { font-size: 10.6pt; line-height: 1.45; background: #fff; }
+  main { max-width: none; padding: 0; }
+  .barra { display: none; }
+  .capa { min-height: 178mm; display: flex; flex-direction: column; justify-content: center;
+          border-bottom: 0; break-after: page; padding: 0; }
+  .emblema { width: 30mm; height: 33mm; }
+  .capa h1 { font-size: 34pt; }
+  h2 { font-size: 17pt; margin-top: 16pt; break-after: avoid; }
+  h3 { font-size: 13.5pt; break-after: avoid; }
+  .hora { font-size: 9pt; }
+  .rubrica p { font-size: 9.5pt; }
+  .quebra { break-after: page; }
+  .nota, tr { break-inside: avoid; }
+  .oracao { box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+  table { font-size: 9pt; }
+  a { color: inherit; text-decoration: none; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+.proximas { padding-left: 20px; }
+.proximas li { margin: 4px 0; }
+.indice h2 { font-size: 24px; }
+</style>
+</head>
+<body class="folheto">
+<nav class="barra"><a href="folheto.html">Folheto</a><a href="organizacao.html">Organização</a><a href="folheto.pdf">Baixar PDF</a><a href="../index.html">Todos os meses</a></nav>
+<main>
+
+<header class="capa">
+  <p class="sobre">Primeira sexta-feira do mês</p>
+  <svg class="emblema" viewBox="0 0 120 130" aria-hidden="true">
+  <g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+    <path d="M60 44 C60 44 57 30 50 24 M60 44 C60 44 63 30 70 24 M60 40 C60 40 60 26 60 18"/>
+    <path d="M60 4 V24 M52 11 H68" stroke-width="3"/>
+  </g>
+  <path d="M60 118 C28 94 12 78 12 58 C12 44 23 34 36 34 C46 34 55 40 60 48 C65 40 74 34 84 34 C97 34 108 44 108 58 C108 78 92 94 60 118 Z"
+        fill="currentColor"/>
+  <g fill="none" stroke="#fbf7f0" stroke-width="2.4" stroke-linecap="round">
+    <path d="M24 64 Q60 50 96 64" stroke-dasharray="6 5"/>
+    <path d="M26 70 Q60 84 94 70" stroke-dasharray="6 5"/>
+  </g>
+  <path d="M63 92 l6 -8" stroke="#fbf7f0" stroke-width="3" stroke-linecap="round"/>
+</svg>
+  <h1>Hora Santa</h1>
+  <p class="data">2 de outubro de 2026</p>
+  <p class="tema">Um anjo veio confortá-lo</p>
+  <p class="versiculo">Lc 22,43 · Santos Anjos da Guarda · Mês do Rosário</p>
+  <ul class="programa"><li><b>18h30</b> Exposição do Santíssimo e adoração silenciosa</li><li><b>19h00</b> Oração comunitária</li><li><b>19h20</b> Reposição do Santíssimo</li><li><b>19h30</b> Santa Missa (comunhão reparadora)</li></ul>
+  <p class="paroquia">Paróquia Santo Antonio de Uberaba — Curitiba, PR</p>
+</header>
+<article>
+<h2>Por que estamos aqui</h2>
+<p>Em 1674, Jesus pediu a Santa Margarida Maria que passasse com Ele <strong>uma hora</strong>, na noite de quinta para sexta-feira, para acompanhá-lo na agonia do Jardim das Oliveiras e pedir misericórdia pelos pecadores. Assim nasceu a <strong>Hora Santa</strong>. A Igreja a recomenda: é uma hora de oração sobre a Paixão do Senhor, sozinho ou em comunidade, diante do Santíssimo.</p>
+<p>Nesta noite, três presenças nos acompanham:</p>
+<ul>
+<li><strong>Os Santos Anjos da Guarda</strong>, que a Igreja celebra hoje. No Getsêmani, quando os amigos dormiam, "apareceu-lhe um anjo do céu, que o confortava" (Lc 22,43). Queremos ser, para Jesus e para os irmãos, esse consolo.</li>
+<li><strong>Maria, Rainha do Rosário.</strong> Outubro é o mês do terço; o primeiro mistério doloroso é justamente a agonia no horto.</li>
+<li><strong>Santa Margarida Maria Alacoque</strong>, cuja memória celebraremos no dia 16.</li>
+</ul>
+<div class="nota">
+<p class="tit">Intenção do Papa Leão XIV para outubro</p>
+<p><strong>Pastoral da saúde mental.</strong> "Rezemos para que a pastoral da saúde mental seja implantada em toda a Igreja, ajudando a superar o estigma e a discriminação contra as pessoas com doenças mentais."</p>
+</div>
+<div class="nota">
+<p class="tit">Indulgência</p>
+<p>Quem adora o Santíssimo Sacramento durante <strong>pelo menos meia hora</strong> pode receber a <strong>indulgência plenária</strong>, nas condições habituais: confissão, comunhão e oração nas intenções do Papa, com o coração desapegado de todo pecado (<em>Enchiridion Indulgentiarum</em>).</p>
+</div>
+<h2><span class="hora">18h30</span> Exposição do Santíssimo</h2>
+<div class="rubrica">
+<p>Enquanto a assembleia canta um canto eucarístico, o ministro traz o Santíssimo Sacramento e o coloca sobre o altar. Todos se ajoelham.</p>
+</div>
+<div class="fala todos">
+<p><span class="quem" title="Todos">T.</span> Graças e louvores se deem a todo momento, ao Santíssimo e diviníssimo Sacramento.</p>
+</div>
+<div class="rubrica">
+<p>Segue-se a adoração em silêncio. Cada um pode usar o guia abaixo.</p>
+</div>
+<h3>Guia para a adoração silenciosa</h3>
+<ol>
+<li><strong>Entrar na presença.</strong> Faça o sinal da cruz e fique alguns instantes em silêncio. Diga no coração: <em>"Senhor, estou aqui para vigiar convosco. Quero consolar-vos e amar-vos."</em></li>
+<li><strong>Ler.</strong> Leia devagar <strong>Lc 22,39-46</strong>. Pare na palavra que mais tocar você.</li>
+<li><strong>Contemplar.</strong> Imagine a cena: a noite, as oliveiras, Jesus de joelhos, os amigos dormindo, o anjo que chega. Olhe para Jesus. Não é preciso dizer nada.</li>
+<li><strong>Consolar e reparar.</strong> Ofereça a Jesus o seu amor por todos os que não o amam, e por você mesmo, nas vezes em que dormiu.</li>
+<li><strong>Interceder.</strong> Apresente os que estão tristes, angustiados, deprimidos; as famílias que cuidam deles; os seus e os que ninguém lembra.</li>
+<li><strong>Com Maria.</strong> Se quiser, reze o <strong>terço dos mistérios dolorosos</strong>, começando pela agonia de Jesus no horto.</li>
+</ol>
+<div class="oracao curta">
+<p class="tit">Oração ao Anjo da Guarda</p>
+<p>Santo Anjo do Senhor, meu zeloso guardador,<br />
+se a ti me confiou a piedade divina,<br />
+sempre me rege, me guarda, me governa e me ilumina.<br />
+Amém.</p>
+</div>
+<h2><span class="hora">19h00</span> Oração comunitária</h2>
+<div class="rubrica">
+<p>Canto ou refrão meditativo.</p>
+</div>
+<div class="fala">
+<p><span class="quem" title="Animador">A.</span> Irmãos e irmãs, nesta primeira sexta-feira do mês, estamos aqui para vigiar com Jesus. No Jardim das Oliveiras Ele sentiu a tristeza até a morte e pediu aos amigos: "Ficai aqui e vigiai comigo". Os amigos dormiram; mas um anjo veio confortá-lo. Nesta noite queremos ser esse consolo para o Coração de Jesus, reparar o abandono que Ele sofre e pedir misericórdia para o mundo, especialmente para os que carregam no coração e na mente um sofrimento que ninguém vê.</p>
+</div>
+<h3>Invocação do Espírito Santo</h3>
+<div class="fala">
+<p><span class="quem" title="">V.</span> Vinde, Espírito Santo, enchei os corações dos vossos fiéis,</p>
+</div>
+<div class="fala todos">
+<p><span class="quem" title="Todos">T.</span> e acendei neles o fogo do vosso amor.</p>
+</div>
+<div class="fala">
+<p><span class="quem" title="">V.</span> Enviai o vosso Espírito e tudo será criado,</p>
+</div>
+<div class="fala todos">
+<p><span class="quem" title="Todos">T.</span> e renovareis a face da terra.</p>
+</div>
+<div class="fala">
+<p><span class="quem" title="Ministro">M.</span> Oremos. Ó Deus, que instruístes os corações dos vossos fiéis com a luz do Espírito Santo, concedei-nos que, no mesmo Espírito, saibamos o que é reto e gozemos sempre da sua consolação. Por Cristo, nosso Senhor.</p>
+</div>
+<div class="fala todos">
+<p><span class="quem" title="Todos">T.</span> Amém.</p>
+</div>
+<h3>A Palavra em quatro momentos</h3>
+<div class="rubrica">
+<p>O leitor proclama cada trecho de Lc 22,39-46 da Bíblia ou do Lecionário. Depois de cada um: um minuto de silêncio, o refrão e a meditação.</p>
+</div>
+<p><strong>1º momento — Lc 22,39-40:</strong> <em>"Orai para não entrardes em tentação."</em></p>
+<div class="fala">
+<p><span class="quem" title="Animador">A.</span> Jesus vai ao lugar de costume. Ele tinha um lugar e uma hora para rezar, e nos chama a fazer o mesmo. Antes da luta, Ele não pede aos amigos que sejam fortes: pede que rezem. A primeira sexta-feira é o nosso "lugar de costume" com o Coração de Jesus. Que tentação hoje me afasta da oração?</p>
+</div>
+<p><strong>2º momento — Lc 22,41-42:</strong> <em>"Não se faça a minha vontade, mas a tua."</em></p>
+<div class="fala">
+<p><span class="quem" title="Animador">A.</span> Jesus se afasta "à distância de um tiro de pedra", ajoelha-se e chama a Deus de Pai. Não esconde o que sente: pede que o cálice seja afastado. E, no mesmo fôlego, entrega-se. Consagrar-se ao Sagrado Coração é isto: dizer ao Pai toda a verdade do que sentimos e, ainda assim, confiar. Que vontade minha eu preciso entregar nesta noite?</p>
+</div>
+<p><strong>3º momento — Lc 22,43-44:</strong> <em>"Apareceu-lhe um anjo do céu, que o confortava."</em></p>
+<div class="fala">
+<p><span class="quem" title="Animador">A.</span> O Filho de Deus conheceu a angústia. O seu suor tornou-se como gotas de sangue. Ninguém que sofre na alma está longe do Coração de Jesus: Ele desceu antes a esse lugar. E o Pai não o deixou sozinho: mandou um anjo. Deus continua mandando anjos: o anjo da guarda de cada um, e também pessoas que escutam sem julgar, que ficam, que ajudam a buscar tratamento. Posso ser um anjo para alguém que está angustiado?</p>
+</div>
+<p><strong>4º momento — Lc 22,45-46:</strong> <em>"Levantai-vos e orai."</em></p>
+<div class="fala">
+<p><span class="quem" title="Animador">A.</span> Os discípulos dormiam "de tristeza". Jesus não os acusa: desperta-os. Ele conhece a nossa fraqueza e continua chamando. A oração desta hora nos põe de pé para a Missa e para a missão: levantar-nos para ir ao encontro dos irmãos que sofrem.</p>
+</div>
+<h3>Ato de reparação ao Sagrado Coração</h3>
+<div class="rubrica">
+<p>Todos, de joelhos, se possível. Oração de Pio XI (<em>Miserentissimus Redemptor</em>, 1928).</p>
+</div>
+<div class="oracao">
+<p class="tit">Ato de reparação</p>
+<p>Dulcíssimo Jesus, cuja caridade derramada sobre os homens é paga com tanta ingratidão, esquecimento, negligência e desprezo, eis-nos prostrados diante de vós, para reparar com especial homenagem a tão criminosa indiferença dos homens e as injúrias com que, de toda parte, é ferido o vosso amantíssimo Coração.<br />
+Lembrando-nos, porém, de que também nós, alguma vez, não estivemos livres de tanta indignidade, e por isso tomados de profunda dor, imploramos em primeiro lugar a vossa misericórdia para nós, prontos a reparar, por uma expiação voluntária, não só os pecados que nós mesmos cometemos, mas também os daqueles que, afastados do caminho da salvação, se obstinam na sua infidelidade e recusam seguir-vos como pastor e guia, ou que, calcando aos pés as promessas do Batismo, sacudiram o jugo suavíssimo da vossa lei.<br />
+Queremos expiar todos esses crimes dignos de pranto, e propomo-nos reparar cada um deles: a imodéstia e as torpezas na vida e no vestir; tantas armadilhas de corrupção armadas contra as almas inocentes; os dias santos profanados; as execráveis blasfêmias lançadas contra vós e contra os vossos Santos; os insultos dirigidos ao vosso Vigário e à ordem sacerdotal; o próprio Sacramento do amor divino, negligenciado ou profanado por horríveis sacrilégios; e, por fim, os pecados públicos das nações que se opõem aos direitos e ao magistério da Igreja por vós fundada.<br />
+Oxalá pudéssemos lavar esses crimes com o nosso próprio sangue! Entretanto, para reparar a honra divina ofendida, nós vos apresentamos a mesma satisfação que outrora oferecestes ao Pai na cruz e que continuais a renovar todos os dias nos altares, unida às expiações da Virgem Mãe, de todos os Santos e dos fiéis piedosos.<br />
+Prometemos de coração, com o auxílio da vossa graça, reparar, quanto estiver em nós, os nossos pecados passados e os dos outros, e a indiferença para com tão grande amor, pela firmeza da fé, pela pureza da vida e pela observância perfeita da lei evangélica, sobretudo da caridade; e também impedir, com todas as nossas forças, as injúrias contra vós, e chamar ao vosso seguimento o maior número possível de pessoas.<br />
+Aceitai, vos suplicamos, benigníssimo Jesus, pela intercessão da Bem-aventurada Virgem Maria Reparadora, esta homenagem voluntária de expiação, e conservai-nos até a morte fidelíssimos no nosso dever e no vosso serviço, com o grande dom da perseverança, para que cheguemos todos àquela pátria onde vós, com o Pai e o Espírito Santo, viveis e reinais pelos séculos dos séculos.<br />
+Amém.</p>
+</div>
+<div class="rubrica">
+<p>Canto penitencial ou de súplica.</p>
+</div>
+<h3>Preces</h3>
+<div class="fala">
+<p><span class="quem" title="Leitor">L.</span> A cada intenção, respondemos:</p>
+</div>
+<div class="fala todos">
+<p><span class="quem" title="Todos">T.</span> Coração de Jesus, tende piedade de nós.</p>
+</div>
+<div class="fala">
+<p><span class="quem" title="Leitor">L.</span> Pelas pessoas que sofrem de depressão, ansiedade e outras doenças mentais, para que encontrem acolhida, tratamento e esperança. Rezemos:</p>
+</div>
+<div class="fala">
+<p><span class="quem" title="Leitor">L.</span> Pelas famílias e cuidadores, para que não se cansem de amar e encontrem apoio na comunidade. Rezemos:</p>
+</div>
+<div class="fala">
+<p><span class="quem" title="Leitor">L.</span> Pela Igreja, para que a pastoral da saúde mental seja implantada em toda parte e vença o estigma e a discriminação, como pede o Papa neste mês. Rezemos:</p>
+</div>
+<div class="fala">
+<p><span class="quem" title="Leitor">L.</span> Pelos médicos, psicólogos, enfermeiros e agentes de saúde, para que sirvam com competência e compaixão. Rezemos:</p>
+</div>
+<div class="fala">
+<p><span class="quem" title="Leitor">L.</span> Pelos que estão tristes e sozinhos, como Jesus no Getsêmani, e pelos que estão em agonia nesta noite. Rezemos:</p>
+</div>
+<div class="fala">
+<p><span class="quem" title="Leitor">L.</span> Pelos sacerdotes, para que sejam segundo o Coração de Jesus, e pelos consagrados da nossa paróquia. Rezemos:</p>
+</div>
+<div class="rubrica">
+<p>Preces espontâneas.</p>
+</div>
+<h3>Pelas intenções do Santo Padre</h3>
+<div class="rubrica">
+<p>Rezam-se um Pai-Nosso, uma Ave-Maria e um Glória ao Pai.</p>
+</div>
+<h3>Oração final</h3>
+<div class="fala">
+<p><span class="quem" title="Ministro">M.</span> Senhor Jesus, que no Jardim das Oliveiras procurastes consolo e encontrastes os amigos dormindo, mas recebestes do Pai um anjo que vos confortou: recebei esta hora de vigília como pequena resposta ao vosso amor. Fazei de nós consolo para o vosso Coração e para os irmãos que sofrem no corpo e na alma. Daqui a pouco, na comunhão desta primeira sexta-feira, queremos receber-vos com o coração desperto. Vós que viveis e reinais pelos séculos dos séculos.</p>
+</div>
+<div class="fala todos">
+<p><span class="quem" title="Todos">T.</span> Amém.</p>
+</div>
+<h2><span class="hora">19h20</span> Reposição do Santíssimo</h2>
+<div class="rubrica">
+<p>O ministro repõe o Santíssimo Sacramento no sacrário, sem bênção, enquanto todos cantam uma aclamação ou um canto eucarístico. A exposição termina antes da Missa (cân. 941 § 2).</p>
+</div>
+<div class="fala todos">
+<p><span class="quem" title="Todos">T.</span> Graças e louvores se deem a todo momento, ao Santíssimo e diviníssimo Sacramento.</p>
+</div>
+<div class="rubrica">
+<p>Canto a Nossa Senhora, se houver tempo.</p>
+</div>
+<h2><span class="hora">19h30</span> Santa Missa</h2>
+<div class="rubrica">
+<p>Na Missa da primeira sexta-feira, a comunhão é oferecida em reparação ao Coração de Jesus. Quem precisar, procure antes o sacramento da Confissão.</p>
+</div>
+<h2>Para rezar em casa</h2>
+<div class="oracao">
+<p class="tit">Ladainha do Sagrado Coração de Jesus (resumida)</p>
+<p>Senhor, tende piedade de nós. <strong>Senhor, tende piedade de nós.</strong><br />
+Cristo, tende piedade de nós. <strong>Cristo, tende piedade de nós.</strong><br />
+Coração de Jesus, Filho do Pai eterno, <strong>tende piedade de nós.</strong><br />
+Coração de Jesus, fornalha ardente de caridade, <strong>tende piedade de nós.</strong><br />
+Coração de Jesus, paciente e cheio de misericórdia, <strong>tende piedade de nós.</strong><br />
+Coração de Jesus, saturado de opróbrios, <strong>tende piedade de nós.</strong><br />
+Coração de Jesus, feito obediente até a morte, <strong>tende piedade de nós.</strong><br />
+Coração de Jesus, fonte de toda consolação, <strong>tende piedade de nós.</strong><br />
+Coração de Jesus, nossa paz e reconciliação, <strong>tende piedade de nós.</strong><br />
+Coração de Jesus, esperança dos que em vós morrem, <strong>tende piedade de nós.</strong><br />
+V. Jesus, manso e humilde de coração,<br />
+R. <strong>Fazei o nosso coração semelhante ao vosso.</strong></p>
+</div>
+<div class="oracao curta">
+<p class="tit">Oferecimento diário (Apostolado da Oração)</p>
+<p>Deus, nosso Pai, eu te ofereço todo o dia de hoje: minhas orações e obras, meus pensamentos e palavras, minhas alegrias e sofrimentos, em reparação de nossas ofensas, em união com o Coração de teu Filho, Jesus, que continua a oferecer-se a Ti, na Eucaristia, pela salvação do mundo.<br />
+Que o Espírito Santo, que guiou a Jesus, seja meu guia e meu amparo neste dia para que eu possa ser testemunha do teu amor.<br />
+Com Maria, Mãe de Jesus e da Igreja, rezo especialmente pelas intenções do Santo Padre para este mês...</p>
+</div>
+<h3>Compromisso do mês</h3>
+<div class="check">
+<ul>
+<li>☐ Ser "anjo" para alguém: visitar, telefonar ou escutar uma pessoa que está triste ou doente.</li>
+<li>☐ Rezar o terço ao menos uma vez por semana em outubro.</li>
+<li>☐ Renovar a consagração ao Sagrado Coração no dia 16, memória de Santa Margarida Maria.</li>
+<li>☐ Rezar pela intenção do Papa: a pastoral da saúde mental.</li>
+</ul>
+</div>
+<p><strong>Jaculatória:</strong> <em>Sagrado Coração de Jesus, eu confio em vós.</em></p>
+<div class="nota">
+<p class="tit">Próxima Hora Santa</p>
+<p><strong>Sexta-feira, 6 de novembro de 2026.</strong> Exposição às 18h30, Missa às 19h30.</p>
+</div>
+</article>
+<footer class="rodape">Roteiro preparado a partir de “No Coração de Jesus” (cap. 9, Hora Santa, e Apêndice). Leitura bíblica: Lc 22,39-46, proclamada da Bíblia ou do Lecionário.</footer>
+</main>
+</body>
+</html>

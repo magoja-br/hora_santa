@@ -1,0 +1,128 @@
+:root {
+  --papel: #fbf7f0; --tinta: #2a211c; --suave: #6b5d52; --linha: #e4d8c6;
+  --rubi: #8f1d21; --ouro: #a97b2c; --caixa: #f4ecdf; --barra: #fffdf9;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --papel: #1b1614; --tinta: #efe6da; --suave: #b9aa9a; --linha: #3a302a;
+    --rubi: #e0676b; --ouro: #d7a854; --caixa: #262019; --barra: #221c19;
+  }
+}
+:root[data-theme="dark"] {
+  --papel: #1b1614; --tinta: #efe6da; --suave: #b9aa9a; --linha: #3a302a;
+  --rubi: #e0676b; --ouro: #d7a854; --caixa: #262019; --barra: #221c19;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--papel); color: var(--tinta);
+  font: 17px/1.6 "Source Serif 4", Georgia, "Palatino Linotype", serif;
+}
+main { max-width: 680px; margin: 0 auto; padding: 0 16px 48px; }
+.barra {
+  position: sticky; top: 0; z-index: 5; display: flex; gap: 6px; flex-wrap: wrap;
+  justify-content: center; padding: 8px 12px; background: var(--barra);
+  border-bottom: 1px solid var(--linha);
+}
+.barra a {
+  font: 600 14px/1 "Source Serif 4", Georgia, serif; color: var(--rubi);
+  text-decoration: none; padding: 8px 12px; border: 1px solid var(--linha); border-radius: 999px;
+}
+.barra a:hover { background: var(--caixa); }
+
+/* capa */
+.capa { text-align: center; padding: 36px 0 28px; border-bottom: 2px solid var(--ouro); margin-bottom: 18px; }
+.capa.curta { border: 0; }
+.emblema { width: 84px; height: 91px; color: var(--rubi); display: block; margin: 10px auto 4px; }
+.capa h1 {
+  font: 700 44px/1.05 "Cormorant Garamond", Georgia, serif; color: var(--rubi);
+  margin: 6px 0 4px; letter-spacing: .02em;
+}
+.sobre { text-transform: uppercase; letter-spacing: .18em; font-size: 12px; color: var(--ouro); margin: 0; }
+.data { font-size: 19px; font-weight: 600; margin: 4px 0 14px; }
+.tema { font: italic 500 25px/1.25 "Cormorant Garamond", Georgia, serif; margin: 0 0 4px; }
+.versiculo { color: var(--suave); font-size: 15px; margin: 0 0 16px; }
+.programa {
+  list-style: none; padding: 12px 16px; margin: 0 auto 14px; max-width: 380px; text-align: left;
+  background: var(--caixa); border-radius: 10px; font-size: 15px;
+}
+.programa li { padding: 3px 0; }
+.programa b { color: var(--rubi); display: inline-block; min-width: 52px; }
+.paroquia { font-size: 14px; color: var(--suave); margin: 0; }
+
+/* corpo */
+h2 {
+  font: 700 27px/1.2 "Cormorant Garamond", Georgia, serif; color: var(--rubi);
+  margin: 34px 0 10px; padding-bottom: 4px; border-bottom: 1px solid var(--linha);
+}
+h3 { font: 700 21px/1.25 "Cormorant Garamond", Georgia, serif; margin: 22px 0 6px; color: var(--tinta); }
+.hora {
+  display: inline-block; font: 600 14px/1 "Source Serif 4", Georgia, serif; color: #fff;
+  background: var(--rubi); padding: 5px 9px; border-radius: 6px; vertical-align: 4px; margin-right: 4px;
+}
+p { margin: 0 0 10px; }
+.rubrica p { color: var(--rubi); font-style: italic; font-size: 15px; margin: 4px 0 8px; }
+.fala { padding-left: 30px; text-indent: -30px; }
+.fala p { margin: 0 0 8px; }
+.quem { color: var(--rubi); font-weight: 600; display: inline-block; width: 26px; text-indent: 0; }
+.todos p { font-weight: 600; }
+.oracao, .nota {
+  background: var(--caixa); border-left: 4px solid var(--ouro); border-radius: 0 10px 10px 0;
+  padding: 12px 16px; margin: 12px 0 16px;
+}
+.nota, .oracao.curta { break-inside: avoid; }
+.check ul { list-style: none; padding-left: 2px; }
+.oracao .tit, .nota .tit {
+  font: 700 19px/1.2 "Cormorant Garamond", Georgia, serif; color: var(--rubi); margin-bottom: 6px;
+}
+.nota { border-left-color: var(--rubi); font-size: 15.5px; }
+.oracao p:last-child, .nota p:last-child { margin-bottom: 0; }
+ul, ol { padding-left: 22px; margin: 0 0 12px; }
+li { margin: 2px 0; }
+table { width: 100%; border-collapse: collapse; font-size: 15px; margin: 8px 0 16px; }
+th, td { border: 1px solid var(--linha); padding: 6px 8px; text-align: left; vertical-align: top; }
+th { background: var(--caixa); }
+.tabela { overflow-x: auto; }
+hr { border: 0; border-top: 1px solid var(--linha); margin: 24px 0; }
+a { color: var(--rubi); }
+.rodape { margin-top: 36px; padding-top: 10px; border-top: 1px solid var(--linha); font-size: 13px; color: var(--suave); text-align: center; }
+
+/* índice */
+.arquivo { list-style: none; padding: 0; }
+.arquivo li { border: 1px solid var(--linha); border-radius: 10px; padding: 12px 14px; margin: 10px 0; background: var(--caixa); }
+.arquivo li > a { text-decoration: none; color: var(--tinta); display: block; }
+.arquivo span { display: block; font-style: italic; color: var(--suave); }
+.arquivo small { font-size: 14px; }
+
+@media (max-width: 480px) {
+  body { font-size: 16.5px; }
+  .capa h1 { font-size: 38px; }
+  table { font-size: 14px; }
+}
+
+/* impressão: A5, pronto para dobrar ou enviar */
+@page { size: A5; margin: 13mm 12mm 14mm; }
+@media print {
+  :root { --papel: #fff; --tinta: #1d1714; --suave: #5c5047; --linha: #d9ccb8;
+          --rubi: #8f1d21; --ouro: #a97b2c; --caixa: #f6efe4; }
+  body { font-size: 10.6pt; line-height: 1.45; background: #fff; }
+  main { max-width: none; padding: 0; }
+  .barra { display: none; }
+  .capa { min-height: 178mm; display: flex; flex-direction: column; justify-content: center;
+          border-bottom: 0; break-after: page; padding: 0; }
+  .emblema { width: 30mm; height: 33mm; }
+  .capa h1 { font-size: 34pt; }
+  h2 { font-size: 17pt; margin-top: 16pt; break-after: avoid; }
+  h3 { font-size: 13.5pt; break-after: avoid; }
+  .hora { font-size: 9pt; }
+  .rubrica p { font-size: 9.5pt; }
+  .quebra { break-after: page; }
+  .nota, tr { break-inside: avoid; }
+  .oracao { box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+  table { font-size: 9pt; }
+  a { color: inherit; text-decoration: none; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+.proximas { padding-left: 20px; }
+.proximas li { margin: 4px 0; }
+.indice h2 { font-size: 24px; }

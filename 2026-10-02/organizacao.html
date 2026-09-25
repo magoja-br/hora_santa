@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Organização — 2 de outubro de 2026</title>
+<meta name="description" content="Um anjo veio confortá-lo">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>:root {
+  --papel: #fbf7f0; --tinta: #2a211c; --suave: #6b5d52; --linha: #e4d8c6;
+  --rubi: #8f1d21; --ouro: #a97b2c; --caixa: #f4ecdf; --barra: #fffdf9;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --papel: #1b1614; --tinta: #efe6da; --suave: #b9aa9a; --linha: #3a302a;
+    --rubi: #e0676b; --ouro: #d7a854; --caixa: #262019; --barra: #221c19;
+  }
+}
+:root[data-theme="dark"] {
+  --papel: #1b1614; --tinta: #efe6da; --suave: #b9aa9a; --linha: #3a302a;
+  --rubi: #e0676b; --ouro: #d7a854; --caixa: #262019; --barra: #221c19;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--papel); color: var(--tinta);
+  font: 17px/1.6 "Source Serif 4", Georgia, "Palatino Linotype", serif;
+}
+main { max-width: 680px; margin: 0 auto; padding: 0 16px 48px; }
+.barra {
+  position: sticky; top: 0; z-index: 5; display: flex; gap: 6px; flex-wrap: wrap;
+  justify-content: center; padding: 8px 12px; background: var(--barra);
+  border-bottom: 1px solid var(--linha);
+}
+.barra a {
+  font: 600 14px/1 "Source Serif 4", Georgia, serif; color: var(--rubi);
+  text-decoration: none; padding: 8px 12px; border: 1px solid var(--linha); border-radius: 999px;
+}
+.barra a:hover { background: var(--caixa); }
+
+/* capa */
+.capa { text-align: center; padding: 36px 0 28px; border-bottom: 2px solid var(--ouro); margin-bottom: 18px; }
+.capa.curta { border: 0; }
+.emblema { width: 84px; height: 91px; color: var(--rubi); display: block; margin: 10px auto 4px; }
+.capa h1 {
+  font: 700 44px/1.05 "Cormorant Garamond", Georgia, serif; color: var(--rubi);
+  margin: 6px 0 4px; letter-spacing: .02em;
+}
+.sobre { text-transform: uppercase; letter-spacing: .18em; font-size: 12px; color: var(--ouro); margin: 0; }
+.data { font-size: 19px; font-weight: 600; margin: 4px 0 14px; }
+.tema { font: italic 500 25px/1.25 "Cormorant Garamond", Georgia, serif; margin: 0 0 4px; }
+.versiculo { color: var(--suave); font-size: 15px; margin: 0 0 16px; }
+.programa {
+  list-style: none; padding: 12px 16px; margin: 0 auto 14px; max-width: 380px; text-align: left;
+  background: var(--caixa); border-radius: 10px; font-size: 15px;
+}
+.programa li { padding: 3px 0; }
+.programa b { color: var(--rubi); display: inline-block; min-width: 52px; }
+.paroquia { font-size: 14px; color: var(--suave); margin: 0; }
+
+/* corpo */
+h2 {
+  font: 700 27px/1.2 "Cormorant Garamond", Georgia, serif; color: var(--rubi);
+  margin: 34px 0 10px; padding-bottom: 4px; border-bottom: 1px solid var(--linha);
+}
+h3 { font: 700 21px/1.25 "Cormorant Garamond", Georgia, serif; margin: 22px 0 6px; color: var(--tinta); }
+.hora {
+  display: inline-block; font: 600 14px/1 "Source Serif 4", Georgia, serif; color: #fff;
+  background: var(--rubi); padding: 5px 9px; border-radius: 6px; vertical-align: 4px; margin-right: 4px;
+}
+p { margin: 0 0 10px; }
+.rubrica p { color: var(--rubi); font-style: italic; font-size: 15px; margin: 4px 0 8px; }
+.fala { padding-left: 30px; text-indent: -30px; }
+.fala p { margin: 0 0 8px; }
+.quem { color: var(--rubi); font-weight: 600; display: inline-block; width: 26px; text-indent: 0; }
+.todos p { font-weight: 600; }
+.oracao, .nota {
+  background: var(--caixa); border-left: 4px solid var(--ouro); border-radius: 0 10px 10px 0;
+  padding: 12px 16px; margin: 12px 0 16px;
+}
+.nota, .oracao.curta { break-inside: avoid; }
+.check ul { list-style: none; padding-left: 2px; }
+.oracao .tit, .nota .tit {
+  font: 700 19px/1.2 "Cormorant Garamond", Georgia, serif; color: var(--rubi); margin-bottom: 6px;
+}
+.nota { border-left-color: var(--rubi); font-size: 15.5px; }
+.oracao p:last-child, .nota p:last-child { margin-bottom: 0; }
+ul, ol { padding-left: 22px; margin: 0 0 12px; }
+li { margin: 2px 0; }
+table { width: 100%; border-collapse: collapse; font-size: 15px; margin: 8px 0 16px; }
+th, td { border: 1px solid var(--linha); padding: 6px 8px; text-align: left; vertical-align: top; }
+th { background: var(--caixa); }
+.tabela { overflow-x: auto; }
+hr { border: 0; border-top: 1px solid var(--linha); margin: 24px 0; }
+a { color: var(--rubi); }
+.rodape { margin-top: 36px; padding-top: 10px; border-top: 1px solid var(--linha); font-size: 13px; color: var(--suave); text-align: center; }
+
+/* índice */
+.arquivo { list-style: none; padding: 0; }
+.arquivo li { border: 1px solid var(--linha); border-radius: 10px; padding: 12px 14px; margin: 10px 0; background: var(--caixa); }
+.arquivo li > a { text-decoration: none; color: var(--tinta); display: block; }
+.arquivo span { display: block; font-style: italic; color: var(--suave); }
+.arquivo small { font-size: 14px; }
+
+@media (max-width: 480px) {
+  body { font-size: 16.5px; }
+  .capa h1 { font-size: 38px; }
+  table { font-size: 14px; }
+}
+
+/* impressão: A5, pronto para dobrar ou enviar */
+@page { size: A5; margin: 13mm 12mm 14mm; }
+@media print {
+  :root { --papel: #fff; --tinta: #1d1714; --suave: #5c5047; --linha: #d9ccb8;
+          --rubi: #8f1d21; --ouro: #a97b2c; --caixa: #f6efe4; }
+  body { font-size: 10.6pt; line-height: 1.45; background: #fff; }
+  main { max-width: none; padding: 0; }
+  .barra { display: none; }
+  .capa { min-height: 178mm; display: flex; flex-direction: column; justify-content: center;
+          border-bottom: 0; break-after: page; padding: 0; }
+  .emblema { width: 30mm; height: 33mm; }
+  .capa h1 { font-size: 34pt; }
+  h2 { font-size: 17pt; margin-top: 16pt; break-after: avoid; }
+  h3 { font-size: 13.5pt; break-after: avoid; }
+  .hora { font-size: 9pt; }
+  .rubrica p { font-size: 9.5pt; }
+  .quebra { break-after: page; }
+  .nota, tr { break-inside: avoid; }
+  .oracao { box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+  table { font-size: 9pt; }
+  a { color: inherit; text-decoration: none; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+.proximas { padding-left: 20px; }
+.proximas li { margin: 4px 0; }
+.indice h2 { font-size: 24px; }
+</style>
+</head>
+<body class="organizacao">
+<nav class="barra"><a href="folheto.html">Folheto</a><a href="organizacao.html">Organização</a><a href="organizacao.pdf">Baixar PDF</a><a href="../index.html">Todos os meses</a></nav>
+<main>
+
+<header class="capa">
+  <p class="sobre">Hora Santa · para a equipe</p>
+  <svg class="emblema" viewBox="0 0 120 130" aria-hidden="true">
+  <g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+    <path d="M60 44 C60 44 57 30 50 24 M60 44 C60 44 63 30 70 24 M60 40 C60 40 60 26 60 18"/>
+    <path d="M60 4 V24 M52 11 H68" stroke-width="3"/>
+  </g>
+  <path d="M60 118 C28 94 12 78 12 58 C12 44 23 34 36 34 C46 34 55 40 60 48 C65 40 74 34 84 34 C97 34 108 44 108 58 C108 78 92 94 60 118 Z"
+        fill="currentColor"/>
+  <g fill="none" stroke="#fbf7f0" stroke-width="2.4" stroke-linecap="round">
+    <path d="M24 64 Q60 50 96 64" stroke-dasharray="6 5"/>
+    <path d="M26 70 Q60 84 94 70" stroke-dasharray="6 5"/>
+  </g>
+  <path d="M63 92 l6 -8" stroke="#fbf7f0" stroke-width="3" stroke-linecap="round"/>
+</svg>
+  <h1>Organização</h1>
+  <p class="data">2 de outubro de 2026</p>
+  <p class="tema">Um anjo veio confortá-lo</p>
+  <p class="versiculo">Forma: exposição pelo ministro, sem bênção · Roteiro D adaptado (cap. 9)</p>
+  <ul class="programa"><li><b>18h00</b> Equipe na igreja</li><li><b>18h30</b> Exposição e adoração silenciosa</li><li><b>19h00</b> Oração comunitária</li><li><b>19h20</b> Reposição</li><li><b>19h30</b> Santa Missa</li></ul>
+  <p class="paroquia">Paróquia Santo Antonio de Uberaba — Curitiba, PR</p>
+</header>
+<article>
+<h2>Ficha da Hora Santa</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Resposta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data</td>
+<td>sexta-feira, 2 de outubro de 2026 (1ª sexta; memória dos Santos Anjos da Guarda)</td>
+</tr>
+<tr>
+<td>Local</td>
+<td>igreja matriz</td>
+</tr>
+<tr>
+<td>Forma</td>
+<td>com exposição, conduzida por <strong>ministro extraordinário designado</strong> (expõe e repõe, <strong>sem bênção</strong>)</td>
+</tr>
+<tr>
+<td>Tema</td>
+<td>"Um anjo veio confortá-lo" (Lc 22,43)</td>
+</tr>
+<tr>
+<td>Evangelho</td>
+<td>Lc 22,39-46, em quatro momentos (39-40 · 41-42 · 43-44 · 45-46)</td>
+</tr>
+<tr>
+<td>Intenção do Papa</td>
+<td>Pastoral da saúde mental</td>
+</tr>
+<tr>
+<td>Ministro</td>
+<td></td>
+</tr>
+<tr>
+<td>Animador</td>
+<td></td>
+</tr>
+<tr>
+<td>Leitores (4 trechos + preces)</td>
+<td></td>
+</tr>
+<tr>
+<td>Canto</td>
+<td></td>
+</tr>
+<tr>
+<td>Sacristia</td>
+<td></td>
+</tr>
+<tr>
+<td>Acolhida (folhetos)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Cronograma minuto a minuto</h2>
+<table>
+<thead>
+<tr>
+<th>Hora</th>
+<th>Momento</th>
+<th>Quem</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>18h00</td>
+<td>Equipe chega; igreja preparada; microfones testados</td>
+<td>todos</td>
+</tr>
+<tr>
+<td>18h25</td>
+<td>Folhetos na entrada; silêncio</td>
+<td>acolhida</td>
+</tr>
+<tr>
+<td>18h30</td>
+<td>Canto eucarístico · exposição no altar · aclamação</td>
+<td>ministro, canto</td>
+</tr>
+<tr>
+<td>18h32</td>
+<td>Adoração silenciosa com o guia do folheto (terço opcional)</td>
+<td>cada um</td>
+</tr>
+<tr>
+<td>19h00</td>
+<td>Refrão · abertura · invocação do Espírito Santo</td>
+<td>animador, ministro</td>
+</tr>
+<tr>
+<td>19h03</td>
+<td>Lc 22 em quatro momentos (1 min de silêncio + refrão + meditação cada)</td>
+<td>leitores, animador</td>
+</tr>
+<tr>
+<td>19h11</td>
+<td>Ato de reparação (todos) · canto penitencial</td>
+<td>todos, canto</td>
+</tr>
+<tr>
+<td>19h14</td>
+<td>Preces · Pai-Nosso, Ave-Maria, Glória</td>
+<td>leitor</td>
+</tr>
+<tr>
+<td>19h17</td>
+<td>Oração final</td>
+<td>ministro</td>
+</tr>
+<tr>
+<td>19h20</td>
+<td><strong>Reposição</strong> no sacrário, com aclamação/canto</td>
+<td>ministro</td>
+</tr>
+<tr>
+<td>19h25</td>
+<td>Canto a Nossa Senhora (opcional) · preparação da Missa</td>
+<td>canto, sacristia</td>
+</tr>
+<tr>
+<td>19h30</td>
+<td>Santa Missa</td>
+<td>celebrante</td>
+</tr>
+</tbody>
+</table>
+<div class="nota">
+<p class="tit">Atenção ao horário</p>
+<p>A reposição <strong>precisa terminar antes da Missa</strong>: durante a Missa não pode haver exposição no mesmo recinto (cân. 941 § 2). Se atrasar, encurte as meditações, não a reposição.</p>
+</div>
+<h2>Normas da Igreja (resumo do cap. 9)</h2>
+<ul>
+<li><strong>Quem pode:</strong> a bênção com o Santíssimo é só do sacerdote ou do diácono. O ministro extraordinário (ou acólito) designado pelo Ordinário faz <strong>somente a exposição e a reposição</strong>, seguindo as normas do bispo (cân. 943).</li>
+<li><strong>Nunca sozinho:</strong> o Santíssimo exposto nunca fica sem adoradores, nem por pouco tempo. Combine quem permanece na igreja das 18h30 às 19h20.</li>
+<li><strong>Como:</strong> na exposição breve, o ostensório ou a píxide fica sobre a mesa do altar, sobre o corporal. Tudo deve favorecer a oração: Palavra, cantos, preces e <strong>silêncio</strong>. Pode-se rezar o terço diante do Santíssimo exposto.</li>
+<li><strong>A imagem do Sagrado Coração</strong> fica em destaque, mas nunca no lugar do Santíssimo.</li>
+</ul>
+<h2>Cantos (escolher do hinário da paróquia)</h2>
+<table>
+<thead>
+<tr>
+<th>Momento</th>
+<th>Tipo de canto</th>
+<th>Escolhido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>18h30 Exposição</td>
+<td>canto eucarístico de adoração</td>
+<td></td>
+</tr>
+<tr>
+<td>Entre os 4 momentos</td>
+<td>refrão curto e meditativo, repetido</td>
+<td></td>
+</tr>
+<tr>
+<td>Após o ato de reparação</td>
+<td>canto penitencial ou de súplica</td>
+<td></td>
+</tr>
+<tr>
+<td>19h20 Reposição</td>
+<td>aclamação ou canto eucarístico</td>
+<td></td>
+</tr>
+<tr>
+<td>Final</td>
+<td>canto a Nossa Senhora (mês do Rosário)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Lista de verificação</h2>
+<p><strong>Na semana anterior (até o domingo, 27/09)</strong></p>
+<div class="check">
+<ul>
+<li>☐ Horários e forma confirmados com o pároco; ministro designado confirmado.</li>
+<li>☐ Leitores e equipe de canto definidos; refrão ensaiado.</li>
+<li>☐ Folheto revisado; PDF enviado ao grupo; cópias impressas (A5, frente e verso).</li>
+<li>☐ Aviso lido nas Missas de domingo (texto abaixo).</li>
+</ul>
+</div>
+<p><strong>No dia (a partir das 18h00)</strong></p>
+<div class="check">
+<ul>
+<li>☐ Igreja aberta, limpa e em silêncio; luz suave.</li>
+<li>☐ Altar com toalha; corporal estendido.</li>
+<li>☐ Ostensório ou píxide preparados; chave do sacrário com o ministro.</li>
+<li>☐ Velas acesas junto ao altar.</li>
+<li>☐ Imagem do Sagrado Coração em destaque, sem ocupar o lugar do Santíssimo.</li>
+<li>☐ Microfones testados; Bíblia ou Lecionário marcado em <strong>Lc 22,39-46</strong>.</li>
+<li>☐ Folhetos na entrada.</li>
+<li>☐ Padre avisado de que haverá fiéis para confissão antes da Missa (se possível).</li>
+</ul>
+</div>
+<h2>Aviso para as Missas de domingo</h2>
+<div class="nota">
+<p class="tit">Texto para ler</p>
+<p>Na próxima sexta-feira, dia 2 de outubro, primeira sexta-feira do mês, teremos a <strong>Hora Santa</strong> em reparação ao Sagrado Coração de Jesus. A exposição do Santíssimo começa às <strong>18h30</strong>; às <strong>19h</strong> faremos a oração comunitária, e às <strong>19h30</strong> a Santa Missa. Neste mês rezaremos pela intenção do Papa: a pastoral da saúde mental. Venha vigiar uma hora com Jesus!</p>
+</div>
+<h2>Mensagem para o WhatsApp</h2>
+<div class="nota">
+<p class="tit">Copiar e enviar com o PDF</p>
+<p>🕯️ <em>Hora Santa — 1ª sexta-feira</em><br />
+Sexta, 2/10 · Paróquia Santo Antonio de Uberaba<br />
+18h30 Exposição do Santíssimo<br />
+19h00 Oração comunitária<br />
+19h30 Santa Missa<br />
+Tema: "Um anjo veio confortá-lo" (Lc 22,43)<br />
+Segue o folheto para acompanhar. "Ficai aqui e vigiai comigo." ❤️‍🔥</p>
+</div>
+<h2>Depois da Hora Santa</h2>
+<ul>
+<li>Quantas pessoas participaram? …</li>
+<li>O que funcionou bem? O que melhorar? …</li>
+<li>Quem assume cada função em <strong>6 de novembro</strong>? …</li>
+</ul>
+</article>
+<footer class="rodape">Baseado em “No Coração de Jesus”, cap. 9 (normas, funções, lista de verificação). Intenção do Papa: Rede Mundial de Oração do Papa, 2026.</footer>
+</main>
+</body>
+</html>
