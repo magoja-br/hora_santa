@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Gera o folheto digital da Hora Santa (site HTML + PDF A5) a partir de Markdown.
+"""Gera o folheto digital da Hora Santa (site HTML + PDF A5 + Word) a partir de Markdown.
 
 Uso:
     python gerar_folheto.py <pasta-do-mes>          # ex.: .../hora-santa/2026-10-02
@@ -10,6 +10,8 @@ A pasta do mês deve conter `folheto.md` (para os fiéis) e, opcionalmente,
 `organizacao.md` (para a equipe). Para cada um são gerados um .html
 autocontido (CSS embutido, bom para enviar por WhatsApp) e um .pdf A5,
 impresso pelo Microsoft Edge ou Google Chrome em modo headless.
+O folheto ganha também um .docx A5, editável no Word (precisa do pacote
+`python-docx`; sem ele, o .docx é pulado).
 Depois o script refaz o `index.html` da pasta-mãe (arquivo de todos os meses).
 
 Convenções do Markdown (além do Markdown comum):
@@ -189,6 +191,178 @@ def imprimir_pdf(html_path, pdf_path):
     return os.path.exists(pdf_path)
 
 
+def gerar_docx(meta, texto, caminho):
+    """Gera o folheto em Word (A5), com as mesmas convenções do Markdown."""
+    try:
+        from docx import Document
+        from docx.enum.table import WD_TABLE_ALIGNMENT
+        from docx.enum.text import WD_ALIGN_PARAGRAPH, WD_BREAK
+        from docx.oxml import OxmlElement
+        from docx.oxml.ns import qn
+        from docx.shared import Mm, Pt, RGBColor
+    except ImportError:
+        print("  ! python-docx não instalado: .docx não gerado (pip install python-docx).")
+        return False
+    RUBI, OURO, SUAVE = RGBColor(0x8F, 0x1D, 0x21), RGBColor(0xA9, 0x7B, 0x2C), RGBColor(0x6B, 0x5D, 0x52)
+    FONTE = "Georgia"
+
+    doc = Document()
+    sec = doc.sections[0]
+    sec.page_width, sec.page_height = Mm(148), Mm(210)
+    sec.top_margin, sec.bottom_margin, sec.left_margin, sec.right_margin = Mm(13), Mm(14), Mm(12), Mm(12)
+    st = doc.styles["Normal"]
+    st.font.name, st.font.size = FONTE, Pt(10.5)
+    st.element.rPr.rFonts.set(qn("w:eastAsia"), FONTE)
+    st.paragraph_format.space_after, st.paragraph_format.line_spacing = Pt(4), 1.1
+    for nome, tam in (("Heading 1", 15), ("Heading 2", 12)):
+        h = doc.styles[nome]
+        h.font.name, h.font.size, h.font.bold, h.font.color.rgb = FONTE, Pt(tam), True, RUBI
+        h.element.rPr.rFonts.set(qn("w:asciiTheme"), "")  # usa a fonte, não o tema
+        h.paragraph_format.space_before, h.paragraph_format.space_after = Pt(12 if tam > 12 else 8), Pt(4)
+        h.paragraph_format.keep_with_next = True
+
+    def inline(p, s, cor=None, italico=False, negrito=False):
+        """Escreve **negrito** e *itálico* do Markdown como runs."""
+        for parte in re.split(r"(\*\*.+?\*\*|\*[^*]+?\*)", s):
+            if not parte:
+                continue
+            b, i = negrito, italico
+            if parte.startswith("**") and parte.endswith("**"):
+                parte, b = parte[2:-2], True
+            elif parte.startswith("*") and parte.endswith("*") and len(parte) > 1:
+                parte, i = parte[1:-1], not italico
+            r = p.add_run(parte)
+            r.bold, r.italic = b, i
+            if cor is not None:
+                r.font.color.rgb = cor
+        return p
+
+    def paragrafo(s="", alinhar=None, tam=None, cor=None, italico=False, negrito=False, depois=None):
+        p = inline(doc.add_paragraph(), s, cor, italico, negrito)
+        if alinhar:
+            p.alignment = alinhar
+        if tam:
+            for r in p.runs:
+                r.font.size = Pt(tam)
+        if depois is not None:
+            p.paragraph_format.space_after = Pt(depois)
+        return p
+
+    def caixa(titulo, versos, oracao):
+        t = doc.add_table(rows=1, cols=1)
+        t.alignment = WD_TABLE_ALIGNMENT.CENTER
+        cel = t.cell(0, 0)
+        tcpr = cel._tc.get_or_add_tcPr()
+        fundo = OxmlElement("w:shd")
+        fundo.set(qn("w:val"), "clear"), fundo.set(qn("w:color"), "auto"), fundo.set(qn("w:fill"), "F4ECDF")
+        tcpr.append(fundo)
+        bordas = OxmlElement("w:tcBorders")
+        for lado in ("top", "left", "bottom", "right"):
+            b = OxmlElement(f"w:{lado}")
+            b.set(qn("w:val"), "single"), b.set(qn("w:sz"), "12" if lado == "left" else "4")
+            b.set(qn("w:color"), "8F1D21" if lado == "left" else "E4D8C6")
+            bordas.append(b)
+        tcpr.append(bordas)
+        p = cel.paragraphs[0]
+        if titulo:
+            inline(p, titulo, RUBI, negrito=True)
+            p = cel.add_paragraph()
+        for n, v in enumerate(versos):
+            if n:
+                p = cel.add_paragraph()
+            m = re.match(r"^([VR])\.\s+(.*)$", v)
+            if m:
+                r = p.add_run(m.group(1) + ". ")
+                r.bold, r.font.color.rgb = True, RUBI
+                v = m.group(2)
+            inline(p, v)
+            p.paragraph_format.space_after = Pt(2 if oracao else 3)
+        doc.add_paragraph().paragraph_format.space_after = Pt(0)
+
+    # capa
+    paragrafo(meta.get("sobretitulo", "Primeira sexta-feira do mês").upper(), WD_ALIGN_PARAGRAPH.CENTER, 9, OURO, depois=18).paragraph_format.space_before = Pt(36)
+    paragrafo("♥", WD_ALIGN_PARAGRAPH.CENTER, 34, RUBI, depois=6)
+    paragrafo(meta.get("titulo", "Hora Santa"), WD_ALIGN_PARAGRAPH.CENTER, 30, RUBI, negrito=True, depois=4)
+    if meta.get("data"):
+        paragrafo(data_extenso(meta["data"]), WD_ALIGN_PARAGRAPH.CENTER, 12, depois=14)
+    if meta.get("tema"):
+        paragrafo(meta["tema"], WD_ALIGN_PARAGRAPH.CENTER, 15, RUBI, italico=True, depois=2)
+    if meta.get("versiculo"):
+        paragrafo(meta["versiculo"], WD_ALIGN_PARAGRAPH.CENTER, 9.5, SUAVE, depois=18)
+    for item in meta.get("programacao", "").split(";"):
+        if "|" in item:
+            hora, o = item.split("|", 1)
+            p = paragrafo("", WD_ALIGN_PARAGRAPH.CENTER, depois=2)
+            r = p.add_run(hora.strip() + "  ")
+            r.bold, r.font.color.rgb = True, RUBI
+            p.add_run(o.strip())
+    if meta.get("paroquia"):
+        paragrafo(meta["paroquia"], WD_ALIGN_PARAGRAPH.CENTER, 9.5, SUAVE, depois=0).paragraph_format.space_before = Pt(24)
+    doc.add_paragraph().add_run().add_break(WD_BREAK.PAGE)
+
+    linhas, i, lista = texto.splitlines(), 0, 0
+    while i < len(linhas):
+        s = linhas[i].strip()
+        m = re.match(r"^>\s*\[!(\w+)\]\s*(.*)$", s)
+        if m:
+            versos = []
+            i += 1
+            while i < len(linhas) and linhas[i].strip().startswith(">"):
+                versos.append(linhas[i].strip()[1:].strip())
+                i += 1
+            caixa(m.group(2), versos, m.group(1).lower() in ("oração", "oracao"))
+            continue
+        i += 1
+        if not s:
+            lista = 0
+            continue
+        if s == "===pagina===":
+            doc.add_paragraph().add_run().add_break(WD_BREAK.PAGE)
+        elif s.startswith("#"):
+            nivel = 1 if s.startswith("## ") else 2
+            doc.add_heading(re.sub(r"^#+\s*", "", s), level=nivel)
+        elif s.startswith("! "):
+            paragrafo(s[2:], cor=RUBI, italico=True, tam=9.5)
+        elif re.match(r"^([ALMPTRV])\.\s+", s):
+            p = doc.add_paragraph()
+            r = p.add_run(s[:2] + " ")
+            r.bold, r.font.color.rgb = True, RUBI
+            inline(p, s[2:].strip(), negrito=s[0] in "TR")
+        elif re.match(r"^- \[[ x]\]\s+", s):
+            paragrafo(("☑ " if s[3] == "x" else "☐ ") + s[6:].strip())
+        elif s.startswith("- "):
+            p = paragrafo("• " + s[2:])
+            p.paragraph_format.left_indent, p.paragraph_format.first_line_indent = Mm(5), Mm(-3.5)
+        elif re.match(r"^\d+\.\s+", s):
+            lista += 1
+            p = paragrafo(f"{lista}. " + re.sub(r"^\d+\.\s+", "", s))
+            p.paragraph_format.left_indent, p.paragraph_format.first_line_indent = Mm(5), Mm(-4)
+        else:
+            paragrafo(s)
+
+    if meta.get("rodape"):
+        paragrafo(meta["rodape"], WD_ALIGN_PARAGRAPH.CENTER, 8.5, SUAVE, italico=True).paragraph_format.space_before = Pt(18)
+    # número da página no rodapé
+    rp = sec.footer.paragraphs[0]
+    rp.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    for tipo, txt in (("begin", None), (None, "PAGE"), ("end", None)):
+        r = rp.add_run()
+        r.font.size, r.font.color.rgb = Pt(8.5), SUAVE
+        if tipo:
+            f = OxmlElement("w:fldChar")
+            f.set(qn("w:fldCharType"), tipo)
+        else:
+            f = OxmlElement("w:instrText")
+            f.set(qn("xml:space"), "preserve")
+            f.text = txt
+        r._r.append(f)
+    sec.different_first_page_header_footer = True
+    doc.core_properties.title = f"{meta.get('titulo', 'Hora Santa')} — {data_extenso(meta['data'])}" if meta.get("data") else meta.get("titulo", "Hora Santa")
+    doc.core_properties.author = meta.get("paroquia", "")
+    doc.save(caminho)
+    return True
+
+
 def primeiras_sextas(n, desde=None):
     d = desde or datetime.date.today()
     ano, mes, out = d.year, d.month, []
@@ -227,7 +401,7 @@ def refazer_indice(raiz, css):
         data = data_extenso(meta["data"]) if meta.get("data") else nome
         itens.append(f"""<li><a href="{nome}/folheto.html"><b>{data}</b>
 <span>{html.escape(meta.get('tema', ''))}</span></a>
-<small><a href="{nome}/folheto.pdf">PDF</a> · <a href="{nome}/organizacao.html">organização</a></small></li>""")
+<small><a href="{nome}/folheto.pdf">PDF</a>{f' · <a href="{nome}/folheto.docx">Word</a>' if os.path.exists(os.path.join(raiz, nome, "folheto.docx")) else ""} · <a href="{nome}/organizacao.html">organização</a></small></li>""")
     prox = []
     for d in primeiras_sextas(6):
         iso = d.isoformat()
@@ -269,7 +443,13 @@ def main():
         corpo = markdown.markdown(converter(texto),
                                   extensions=["md_in_html", "tables", "sane_lists", "attr_list"])
         irmaos = [(f"{d}.html", rotulos[d]) for d in docs]
-        irmaos += [(f"{doc}.pdf", "Baixar PDF"), ("../index.html", "Todos os meses")]
+        irmaos += [(f"{doc}.pdf", "Baixar PDF")]
+        if doc == "folheto":
+            w = os.path.join(pasta, "folheto.docx")
+            print("Word:", w if gerar_docx(meta, texto, w) else "(não gerado)")
+            if os.path.exists(w):
+                irmaos += [("folheto.docx", "Baixar Word")]
+        irmaos += [("../index.html", "Todos os meses")]
         h = os.path.join(pasta, doc + ".html")
         open(h, "w", encoding="utf-8").write(pagina(meta, corpo, css, doc, irmaos))
         print("HTML:", h)

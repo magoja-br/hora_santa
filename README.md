@@ -12,8 +12,8 @@ Folhetos e organização da Hora Santa mensal do grupo do Sagrado Coração de J
 |---|---|
 | `index.html` | página inicial: próximas datas e todos os folhetos |
 | `recursos.md` → `recursos.html` | funções da equipe, normas, checklist mensal, links do livro |
-| `AAAA-MM-DD/` | um mês: `folheto` (fiéis) e `organizacao` (equipe), em `.md`, `.html` e `.pdf` A5 |
-| `ferramentas/gerar_folheto.py` | gera HTML + PDF a partir dos `.md` |
+| `AAAA-MM-DD/` | um mês: `folheto` (fiéis) e `organizacao` (equipe), em `.md`, `.html` e `.pdf` A5; o folheto também em `.docx` (Word, A5, editável) |
+| `ferramentas/gerar_folheto.py` | gera HTML + PDF (+ Word do folheto) a partir dos `.md` |
 | `ferramentas/folheto.css` | aparência (tela, celular e impressão A5) |
 | `ferramentas/modelo/` | modelo de folheto e de organização para copiar |
 
@@ -21,7 +21,7 @@ Folhetos e organização da Hora Santa mensal do grupo do Sagrado Coração de J
 
 1. Copie `ferramentas/modelo/*.md` para uma pasta nova com a data, ex. `2026-11-06/`.
 2. Edite o tema, o Evangelho em 4 momentos, a intenção do Papa, as preces e as datas.
-3. Gere o site e os PDFs (precisa de Python com `markdown` e do Edge ou Chrome instalado):
+3. Gere o site, os PDFs e o Word (precisa de Python com `markdown` e `python-docx`, e do Edge ou Chrome instalado):
 
    ```bash
    python ferramentas/gerar_folheto.py 2026-11-06
