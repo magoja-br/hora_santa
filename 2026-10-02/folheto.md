@@ -5,7 +5,7 @@ data: 2026-10-02
 tema: "Um anjo veio confortá-lo"
 versiculo: "Lc 22,43 · Santos Anjos da Guarda · Mês do Rosário"
 paroquia: Paróquia Santo Antonio de Uberaba — Curitiba, PR
-programacao: "18h30|Exposição do Santíssimo e adoração silenciosa;19h00|Oração comunitária;19h20|Reposição do Santíssimo;19h30|Santa Missa (comunhão reparadora)"
+programacao: "18h30|Exposição do Santíssimo e adoração silenciosa;19h00|Oração comunitária;19h20|Bênção (padre ou diácono) e reposição do Santíssimo;19h30|Santa Missa (comunhão reparadora)"
 rodape: "Roteiro preparado a partir de “No Coração de Jesus” (cap. 9, Hora Santa, e Apêndice). Leitura bíblica: Lc 22,39-46, proclamada da Bíblia ou do Lecionário."
 ---
 
@@ -139,13 +139,21 @@ M. Senhor Jesus, que no Jardim das Oliveiras procurastes consolo e encontrastes 
 
 T. Amém.
 
-## 19h20 · Reposição do Santíssimo
+## 19h20 · Bênção e reposição do Santíssimo
 
-! O ministro repõe o Santíssimo Sacramento no sacrário, sem bênção, enquanto todos cantam uma aclamação ou um canto eucarístico. A exposição termina antes da Missa (cân. 941 § 2).
+### Com padre ou diácono
+
+! O sacerdote ou diácono se aproxima do altar, faz a Adoração ao Santíssimo Sacramento e dá a bênção com o Santíssimo Sacramento.
+
+### Na ausência de padre ou diácono
+
+! O ministro repõe o Santíssimo Sacramento no sacrário, sem bênção (cân. 943), enquanto todos cantam uma aclamação ou um canto eucarístico.
 
 T. Graças e louvores se deem a todo momento, ao Santíssimo e diviníssimo Sacramento.
 
-! Canto a Nossa Senhora, se houver tempo.
+### Canto final
+
+! Canto a Nossa Senhora, se houver tempo. A exposição termina antes da Missa (cân. 941 § 2).
 
 ## 19h30 · Santa Missa
 

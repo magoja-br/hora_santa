@@ -5,7 +5,7 @@ data: 2026-10-02
 tema: "Um anjo veio confortá-lo"
 versiculo: "Forma: exposição pelo ministro, sem bênção · Roteiro D adaptado (cap. 9)"
 paroquia: Paróquia Santo Antonio de Uberaba — Curitiba, PR
-programacao: "18h00|Equipe na igreja;18h30|Exposição e adoração silenciosa;19h00|Oração comunitária;19h20|Reposição;19h30|Santa Missa"
+programacao: "18h00|Equipe na igreja;18h30|Exposição e adoração silenciosa;19h00|Oração comunitária;19h20|Bênção (padre ou diácono) ou reposição;19h30|Santa Missa"
 rodape: "Baseado em “No Coração de Jesus”, cap. 9 (normas, funções, lista de verificação). Intenção do Papa: Rede Mundial de Oração do Papa, 2026."
 ---
 
@@ -39,7 +39,7 @@ rodape: "Baseado em “No Coração de Jesus”, cap. 9 (normas, funções, list
 | 19h11 | Ato de reparação (todos) · canto penitencial | todos, canto |
 | 19h14 | Preces · Pai-Nosso, Ave-Maria, Glória | leitor |
 | 19h17 | Oração final | ministro |
-| 19h20 | **Reposição** no sacrário, com aclamação/canto | ministro |
+| 19h20 | **Bênção** (se houver padre ou diácono) ou **reposição sem bênção** pelo ministro, com aclamação/canto | padre/diácono ou ministro |
 | 19h25 | Canto a Nossa Senhora (opcional) · preparação da Missa | canto, sacristia |
 | 19h30 | Santa Missa | celebrante |
 
